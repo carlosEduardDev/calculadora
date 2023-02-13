@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+
+:root {
+  --medida: 1rem;
+  --branco: #fff;
+  --preto: #000;
+}
+
+* {
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+body {
+  background-color: rgb(190, 211, 214);
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+.calculadora {
+  background-color: var(--branco);
+  backdrop-filter: blur(var(--medida));
+  border: calc(var(--medida) - 0.99rem) solid var(--preto);
+  width: calc(var(--medida) * 20);
+  height: calc(var(--medida) * 30);
+  border-radius: var(--medida);
+  box-shadow: calc(var(--medida) - 0.2rem) calc(var(--medida) - 0.2rem)
+    calc(var(--medida) - 0.8rem) rgb(105, 102, 102);
+  animation: fade 1s linear forwards .5s;
+  opacity: 0;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.calculadora__tela {
+  margin: var(--medida) auto;
+  padding: 0 calc(var(--medida) - 0.5rem);
+  border-radius: calc(var(--medida) - 0.5rem);
+  width: calc(var(--medida) * 18);
+  height: calc(var(--medida) * 4);
+  background-color: #74968b;
+  overflow: hidden;
+  display: grid;
+  text-align-last: right;
+  align-items: center;
+  font-size: calc(var(--medida) * 2);
+  color: var(--preto);
+}
+
+.calculadora__botoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3px;
+  padding: 0 calc(var(--medida) - 0.5rem);
+  margin: calc(var(--medida) * 2) calc(var(--medida) - 0.6rem);
+}
+
+.calculadora input {
+  cursor: pointer;
+  border-radius: calc(var(--medida) - 0.5rem);
+  height: calc(var(--medida) * 4);
+  border: none;
+  background-color: #74968b;
+  font-size: calc(var(--medida) * 1.5);
+  color: var(--preto);
+}
+.calculadora input:hover {
+  background-color: #487a6a;
+}
+.calculadora input:nth-child(17) {
+  grid-column: 1/5;
+}
+.calculadora__tela:hover {
+  background-color: #74968b !important;
+  cursor: default;
+}
+
+.animacao {
+  animation: pisca 0.3s linear;
+}
+@keyframes pisca {
+  50% {
+    background-color: #012e20;
+  }
+}
+
+h1 {
+  font-size: calc(var(--medida) + 0.2rem);
+  text-align: center;
+  margin-top: calc(var(--medida) * 2);
+  animation: fade 1s linear forwards 1s;
+  opacity: 0;
+}
+
+span {
+  color: #051f17;
+}
+
+#contato {
+  margin-top: calc(var(--medida) + 0.5rem);
+  display: flex;
+  gap: calc(var(--medida) + 0.1rem);
+  place-content: center;
+  animation: fade 1s linear forwards 1.5s;
+  opacity: 0;
+}
+
+#contato img {
+  width: calc(var(--medida) + 1.6rem);
+}
